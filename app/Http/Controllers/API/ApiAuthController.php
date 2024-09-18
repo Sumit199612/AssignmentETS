@@ -114,4 +114,11 @@ class ApiAuthController extends ApiController
             return $this->throwableError("Something went wrong", $th->getMessage(), 500);
         }
     }
+
+    public function userLogout(Request $request)
+    {
+        $user = $request->user()->token();
+        $user->revoke();
+        return $this->successResponse('You have logged out successfully', $user);
+    }
 }

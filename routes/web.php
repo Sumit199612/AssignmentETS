@@ -26,6 +26,7 @@ Route::get('export-excel', [UserController::class, 'exportCsv'])->name('export-e
 Route::get('export-csv', [UserController::class, 'exportCsv'])->name('export-csv');
 Route::get('export-pdf', [UserController::class, 'exportPdf'])->name('export-pdf');
 Route::get('cities/{state}', [UserController::class, 'getCity']);
+Route::post('user-logout', [UserController::class, 'logout'])->name('user-logout');
 
 Auth::routes();
 
